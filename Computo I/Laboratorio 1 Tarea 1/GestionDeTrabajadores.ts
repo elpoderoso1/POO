@@ -14,7 +14,7 @@ abstract class Empleado {
     abstract mostrarDetalles(): void;
 }
 
-class PersonalAdmin extends Empleado {
+export class PersonalAdmin extends Empleado {
     constructor(nombre: string, edad: number, id: string) {
         super(nombre, edad, id, 'Administrativo');
     }
@@ -24,7 +24,7 @@ class PersonalAdmin extends Empleado {
     }
 }
 
-class PersonalLimpieza extends Empleado {
+export class PersonalLimpieza extends Empleado {
     constructor(nombre: string, edad: number, id: string) {
         super(nombre, edad, id, 'Limpieza');
     }
@@ -34,7 +34,7 @@ class PersonalLimpieza extends Empleado {
     }
 }
 
-class Docente extends Empleado {
+export class Docente extends Empleado {
     constructor(nombre: string, edad: number, id: string) {
         super(nombre, edad, id, 'Docente');
     }
@@ -44,12 +44,14 @@ class Docente extends Empleado {
     }
 }
 
-class GestionEmpleados {
+export class GestionEmpleados {
     empleados: Empleado[] = [];
 
     public agregarEmpleado(empleado: Empleado) {
         this.empleados.push(empleado);
+        console.log(`Empleado agregado: ${empleado.nombre} (${empleado.id})`);  // Verifica que se haya agregado
     }
+    
 
     // push -> Agrega uno o más elementos al final de un array y devuelve la nueva longitud del array.
 
@@ -70,8 +72,13 @@ class GestionEmpleados {
     // find -> Devuelve el primer elemento que cumple con la condición dada. Si no encuentra nada, devuelve undefined.
 
     public listarEmpleados() {
-        this.empleados.forEach(empleado => empleado.mostrarDetalles());
+        if (this.empleados.length === 0) {
+            console.log("No hay empleados registrados.");
+        } else {
+            this.empleados.forEach(empleado => empleado.mostrarDetalles());
+        }
     }
+    
 
     // forEach -> Ejecuta una función para cada elemento del array, pero no devuelve un nuevo array (a diferencia de map).
 
@@ -80,18 +87,3 @@ class GestionEmpleados {
         empleadosFiltrados.forEach(empleado => empleado.mostrarDetalles());
     }
 }
-
-const gestion = new GestionEmpleados();
-const admin1 = new PersonalAdmin('Jose', 30, 'PPBO0');
-const limpiador1 = new PersonalLimpieza('Maria', 25, 'PPBO1');
-const docente1 = new Docente('Jennifer', 23, 'PPBO2');
-
-gestion.agregarEmpleado(admin1);
-gestion.agregarEmpleado(limpiador1);
-gestion.agregarEmpleado(docente1);
-
-gestion.listarEmpleados();
-gestion.filtrarPorRol('Administrativo');
-gestion.editarEmpleado('PPBO1', 'Maria Jose', 26);
-gestion.eliminarEmpleado('PPBO2');
-gestion.listarEmpleados();

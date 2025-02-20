@@ -15,7 +15,7 @@ abstract class Vehiculo { // Clase abstracta
 }
 
 // Herencia
-class Auto extends Vehiculo {
+export class Auto extends Vehiculo {
     constructor(marca: string, modelo: string, public tipo: string) {
         super (marca, modelo);
     }
@@ -27,7 +27,7 @@ class Auto extends Vehiculo {
 }
 
 // Herencia
-class Camion extends Vehiculo {
+export class Camion extends Vehiculo {
     constructor(marca: string, modelo: string, public capacidad: number) {
         super (marca, modelo);
     }
@@ -39,7 +39,7 @@ class Camion extends Vehiculo {
 }
 
 // Herencia
-class Moto extends Vehiculo {
+export class Moto extends Vehiculo {
     constructor(marca: string, modelo: string, public tipo: string) {
         super (marca, modelo);
     }
@@ -50,7 +50,7 @@ class Moto extends Vehiculo {
     }
 }
 
-class GestionDeVehiculos {
+export class GestionDeVehiculos {
     vehiculos: Vehiculo[] = [];
 
     public agregarVehiculo(vehiculo: Vehiculo) {
@@ -61,15 +61,3 @@ class GestionDeVehiculos {
         this.vehiculos.forEach(vehiculo => vehiculo.mover());
     }
 }
-
-const gestionVehiculos = new GestionDeVehiculos();
-const auto1 = new Auto('Toyotota', 'Corolla', 'Sedán');
-const camion1 = new Camion('Volvo', 'FH', 15000);
-const moto1 = new Moto('Yamaha', 'MT-07', 'Montañosa');
-
-gestionVehiculos.agregarVehiculo(auto1);
-gestionVehiculos.agregarVehiculo(camion1);
-gestionVehiculos.agregarVehiculo(moto1);
-
-gestionVehiculos.moverTodos();
-
