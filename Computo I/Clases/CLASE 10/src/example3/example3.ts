@@ -40,3 +40,7 @@ class EmployeeExample {
         public salary: number
     ) {}
 }
+
+const newProductExample = new CRUDRepositoyExample<ProductExample>();
+const newEmployeeExample = new CRUDRepositoyExample<EmployeeExample>();
+
