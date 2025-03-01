@@ -19,8 +19,8 @@ class PersonEjemplo {
     }
 }
 
-const person1 = new PersonEjemplo("Lord", 100, "Ingeniero en Software");
-person1.printInfo();
+const person112 = new PersonEjemplo("Lord", 100, "Ingeniero en Software");
+person112.printInfo();
 
 
 // Herencia -> extends
