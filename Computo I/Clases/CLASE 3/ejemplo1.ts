@@ -1,4 +1,4 @@
-class Person {
+class Personss {
     private _age: number = 0;
 
     public get age(): number {
@@ -16,6 +16,6 @@ class Person {
     }
 }
 
-const person1 = new Person();
+const person1 = new Personss();
 person1.age = 100;
 console.log(person1.age);

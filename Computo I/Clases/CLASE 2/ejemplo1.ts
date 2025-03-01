@@ -1,4 +1,4 @@
-class Person {
+class PersonEjemplo {
     // Modificadores de acceso
     public name: string; // Se puede visualizar y modificar en cualquier parte del codigo.
     private _age: number; // Se puede visualizar y modificar solo en la clase donde se asigna.
@@ -19,7 +19,7 @@ class Person {
     }
 }
 
-const person1 = new Person("Lord", 100, "Ingeniero en Software");
+const person1 = new PersonEjemplo("Lord", 100, "Ingeniero en Software");
 person1.printInfo();
 
 

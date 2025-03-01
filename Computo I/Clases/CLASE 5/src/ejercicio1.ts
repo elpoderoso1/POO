@@ -1,4 +1,4 @@
-interface Person {
+interface PersonExamples {
     name: string;
 
     work(): void;
@@ -8,7 +8,7 @@ interface SwimmingInterface{
     swin(): void;
 }
 
-class Employee implements Person {
+class Employee implements PersonExamples {
 
     constructor(public name: string) {}
     // Ahorrandose el public name y luego el this.name
@@ -18,7 +18,7 @@ class Employee implements Person {
     }
 }
 
-class Athetle implements Person, SwimmingInterface{
+class Athetle implements PersonExamples, SwimmingInterface{
     constructor(public name: string) {}
 
     public work(): void {
