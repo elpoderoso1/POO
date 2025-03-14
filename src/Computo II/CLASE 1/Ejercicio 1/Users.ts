@@ -4,6 +4,4 @@ export default class User001{
         public name: string,
         public email: string
     ) {}
-
 }
-
