@@ -1,6 +1,10 @@
 // DEPENDENCY INVERSION PRINCIPLE
 
 class EmailServiceInc {
+
+    // constructor(public name: string) {
+    // }
+
     public sendEmail(message: string): void {
         console.log(`Mensaje: ${message}`);
     }
