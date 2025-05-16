@@ -42,4 +42,5 @@ const pantalla1 = new UI();
 
 player.addObserver(pantalla1);
 player.sendUINotification(19)
+player.sendUINotification(59)
 player.sendUINotification(100)
